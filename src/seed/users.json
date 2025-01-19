@@ -1,0 +1,21 @@
+[
+    {
+        "firstName": "Việt",
+        "lastName": "Hoàng",
+        "username": "1",
+        "password": "$2b$10$Tkeo64XI546gcaogjYCDnuTUtShZNA9jiSjm0eT2o8D241p/J0Bey"
+    },
+    {
+        "firstName": "Vân",
+        "lastName": "Nguyễn",
+        "username": "2",
+        "password": "$2b$10$Tkeo64XI546gcaogjYCDnuTUtShZNA9jiSjm0eT2o8D241p/J0Bey"
+    },
+    {
+        "firstName": "Admin",
+        "lastName": "",
+        "username": "admin",
+        "password": "$2b$10$Tkeo64XI546gcaogjYCDnuTUtShZNA9jiSjm0eT2o8D241p/J0Bey",
+        "role": "admin"
+    }
+]
