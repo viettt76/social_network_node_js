@@ -1,6 +1,12 @@
-require('dotenv').config();
+import { Request, Response } from 'express';
 
-const errorHandler = (error, req, res, next) => {
+type ErrorType = {
+    statusCode?: number;
+    message?: string;
+    stack?: string;
+};
+
+export const errorHandler = (error: ErrorType, req: Request, res: Response) => {
     const responseError = {
         statusCode: error.statusCode || 500,
         message: error.message || 'INTERNAL_SERVER_ERROR',
@@ -11,8 +17,4 @@ const errorHandler = (error, req, res, next) => {
     if (process.env.BUILD_MODE !== 'dev') delete responseError.stack;
 
     res.status(responseError.statusCode).json(responseError);
-};
-
-module.exports = {
-    errorHandler,
 };

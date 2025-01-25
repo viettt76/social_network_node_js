@@ -1,14 +1,17 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
-const { Server } = require('socket.io');
-const http = require('http');
-const { AppDataSource } = require('./data-source');
-const routes = require('./routes');
-const { errorHandler } = require('./utils/errorHandler');
-const authMiddleware = require('./middlewares/authMiddleware');
-require('express-async-errors');
+import 'tsconfig-paths/register';
+import dotenv from 'dotenv';
+import express from 'express';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import { Server } from 'socket.io';
+import http from 'http';
+import 'express-async-errors';
+import routes from '@/routes';
+import { AppDataSource } from '@/data-source';
+import { errorHandler } from '@/utils/errorHandler';
+import authMiddleware from '@/middlewares/authMiddleware';
+
+dotenv.config();
 
 AppDataSource.initialize()
     .then(async () => {

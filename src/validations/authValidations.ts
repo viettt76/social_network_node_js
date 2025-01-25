@@ -1,8 +1,9 @@
-const Joi = require('joi');
-const validationHandler = require('../utils/validationHandler');
-const { Gender } = require('../entity/User');
+import { NextFunction, Request, Response } from 'express';
+import Joi from 'joi';
+import validationHandler from '@/utils/validationHandler';
+import { Gender } from '@/entity/User';
 
-const signup = (req, res, next) => {
+export const signup = (req: Request, res: Response, next: NextFunction) => {
     const correctValidation = Joi.object({
         firstName: Joi.string().max(30).required().trim().strict(),
         lastName: Joi.string().max(30).required().trim().strict(),
@@ -21,16 +22,11 @@ const signup = (req, res, next) => {
     validationHandler(correctValidation, req.body, res, next);
 };
 
-const login = (req, res, next) => {
+export const login = (req: Request, res: Response, next: NextFunction) => {
     const correctValidation = Joi.object({
         username: Joi.string().min(6).max(30).required().trim().strict(),
         password: Joi.string().min(8).max(32).required().trim().strict(),
     });
 
     validationHandler(correctValidation, req.body, res, next);
-};
-
-module.exports = {
-    signup,
-    login,
 };

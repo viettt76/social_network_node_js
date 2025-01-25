@@ -1,18 +1,23 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        },
         "target": "ES6",
         "module": "CommonJS",
         "moduleResolution": "node",
-        "outDir": "./src/entity",
-        "rootDir": "./src/entityTs",
+        "outDir": "./dist",
+        "rootDir": "./src",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "strictPropertyInitialization": false
+        "strictPropertyInitialization": false,
+        "resolveJsonModule": true
     },
-    "include": ["src/entityTs/*.ts"],
-    "exclude": ["node_modules", "dist"]
+    "include": ["src"],
+    "exclude": ["node_modules"]
 }
